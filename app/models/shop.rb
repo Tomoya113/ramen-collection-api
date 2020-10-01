@@ -1,2 +1,5 @@
 class Shop < ApplicationRecord
+  self.primary_key = :shop_id
+  has_many :stations, through: :shop_stations
+  has_many :shop_stations
 end
