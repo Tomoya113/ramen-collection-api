@@ -1,0 +1,2 @@
+class ShopStation < ApplicationRecord
+end
