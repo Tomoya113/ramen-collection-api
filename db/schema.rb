@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_02_110031) do
+ActiveRecord::Schema.define(version: 2020_10_02_131954) do
 
   create_table "shop_stations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "station_id", null: false
@@ -26,13 +26,14 @@ ActiveRecord::Schema.define(version: 2020_10_02_110031) do
     t.string "shop_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "isFinished", default: false, null: false
     t.index ["shop_id"], name: "index_shop_users_on_shop_id"
     t.index ["user_id"], name: "index_shop_users_on_user_id"
   end
 
   create_table "shops", primary_key: "shop_id", id: :string, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "category"
+    t.string "name", null: false
+    t.string "category", null: false
     t.string "latitude"
     t.string "longitude"
     t.string "image_url"
@@ -51,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_10_02_110031) do
   end
 
   create_table "stations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "latitude", null: false
