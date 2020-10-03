@@ -8,19 +8,19 @@ module Api
     class TestController < ApplicationController
       def index
         # shop = json["rest"][0]
-        shop = Shop.first
-        station = Station.first
-        user = User.first
-        ShopUser.create({
-          shop_id: shop.shop_id,
-          user_id: user.id
-        })
+        # shop = Shop.first
+        # station = Station.first
+        # user = User.first
+        # ShopUser.create({
+        #   shop_id: shop.shop_id,
+        #   user_id: user.id
+        # })
 
-        StationUser.create({
-          station_id: station.id,
-          user_id: user.id
-        })
-        render :json => json
+        # StationUser.create({
+        #   station_id: station.id,
+        #   user_id: user.id
+        # })
+        render :json => {test: 'success'}
       end
 
       def create_data
