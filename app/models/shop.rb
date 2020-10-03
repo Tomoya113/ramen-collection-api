@@ -7,5 +7,4 @@ class Shop < ApplicationRecord
   has_many :users, through: :shop_users
 
   validates :shop_id, uniqueness: true
-  validates :latitude, uniqueness: { scope: :longitude }
 end
