@@ -1,6 +1,6 @@
 module Api
   module V1
-    class ShopsController < ApplicationController  
+    class ShopsController < ApplicationController
     end
   end
 end

@@ -16,6 +16,12 @@ module Api
         render :json => user
       end
 
+      def station 
+        user = User.find(params[:id])
+        station = user.stations.first
+        render :json => station
+      end
+
       def get_stations
         user = User.find(params[:id])
         stations = user.stations.all
