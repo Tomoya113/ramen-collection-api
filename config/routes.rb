@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       resources :stations, only: [:index, :show]
       resources :test
       resources :setup, only: [:index]
+      resources :station_users, only: [:index]
     end
   end
 end
