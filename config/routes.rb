@@ -5,8 +5,8 @@ Rails.application.routes.draw do
       get "users/new" => "users#new"
       get "users/get_station/:id" => "users#get_station"
       get "users/get_stations/:id" => "users#get_stations"
+      get "users/get_shops/:station_id/:user_id" => "users#get_shops"
 
-      get "stations/get_shops/:id" => "stations#get_shops"
       get "stations/get_all" => "stations#get_all"
 
       get "test/create_data" => "test#create_data"
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
       post "shop_users/finish/:user_id/:shop_id" => "shop_users#finish"
       post "station_users/register/:user_id/:station_id" => "station_users#register"
+      get  "station_users/register/:user_id/:station_id" => "station_users#register"
       
       resources :users, only: [:index, :show]
       resources :shops, only: [:index, :show]

@@ -27,6 +27,20 @@ module Api
         stations = user.stations.all
         render :json => stations
       end
+
+      def get_shops
+        shop_user_status = []
+        shops = []
+        station = Station.find(params[:station_id])
+        station.shop_stations.each do |shop_station|
+          shop = shop_station.shop
+          shop_user = ShopUser.where(user_id: params[:user_id], shop_id: shop.shop_id)
+          shops.push(shop)
+          shop_user_status.push(shop_user)
+        end
+        render :json => {shop: shops, shop_user_status: shop_user_status}
+      end
+
     end
   end
 end
