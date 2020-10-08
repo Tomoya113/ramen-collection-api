@@ -9,7 +9,10 @@ module Api
           user_id: params[:user_id],
           station_id: params[:station_id]
         })
-        
+        p !station_user
+        if !station_user 
+          station_user = StationUser.where(station_id: params[:station_id]).where(user_id: params[:user_id])
+        end
         shop_stations = ShopStation.where(station_id: station_user.station_id)
         p shop_stations
         shop_stations.each do |shop_station| 
