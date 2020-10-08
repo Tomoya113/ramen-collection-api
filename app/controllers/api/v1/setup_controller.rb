@@ -11,7 +11,7 @@ module Api
         stations = [
           {name: '地下鉄梅田駅', latitude: "34.7031923", longitude: "135.4967068" },
           {name: '北新地駅', latitude: "34.6994459", longitude: "135.4944568" },
-          {name: '地下鉄梅田駅', latitude: "34.6964287", longitude: "135.4866259" }
+          {name: '福島駅', latitude: "34.6964287", longitude: "135.4866259" }
         ]
         stations.each do |station|
           new_station = Station.create({
