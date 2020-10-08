@@ -5,10 +5,10 @@ module Api
         render :json => StationUser.all
       end
       def register
-        # station_user = StationUser.create({
-        #   user_id: params[:user_id],
-        #   station_id: params[:station_id]
-        # })
+        station_user = StationUser.create({
+          user_id: params[:user_id],
+          station_id: params[:station_id]
+        })
         
         station_user = StationUser.find_by(station_id: params[:station_id], user_id: params[:user_id])
         shop_stations = ShopStation.where(station_id: station_user.station_id)
