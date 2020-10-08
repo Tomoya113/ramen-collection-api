@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
       post "shop_users/finish/:user_id/:shop_id" => "shop_users#finish"
       post "station_users/register/:user_id/:station_id" => "station_users#register"
-      get  "station_users/register/:user_id/:station_id" => "station_users#register"
+      get "station_users/register/:user_id/:station_id" => "station_users#register"
       
       resources :users, only: [:index, :show]
       resources :shops, only: [:index, :show]

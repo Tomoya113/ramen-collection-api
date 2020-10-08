@@ -11,12 +11,13 @@ module Api
         })
         
         shop_stations = ShopStation.where(station_id: station_user.station_id)
+        p shop_stations
         shop_stations.each do |shop_station| 
-          ShopUser.create({
+          hoge = ShopUser.create!({
             shop_id: shop_station.shop.id,
             user_id: params[:user_id]
           })
-          
+          p hoge
         end
         
         render :json => {status: 'success'}
