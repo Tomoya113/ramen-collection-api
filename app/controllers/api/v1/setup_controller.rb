@@ -19,6 +19,11 @@ module Api
             latitude: station[:latitude],
             longitude: station[:longitude]
           })
+          new_station = Station.find_by({
+            name: station[:name],
+            latitude: station[:latitude],
+            longitude: station[:longitude]
+          })
           path = "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=#{ENV["API_KEY"]}&latitude=#{new_station["latitude"]}&longitude=#{new_station["longitude"]}&category_s=RSFST08009,RSFST08008&coordinates_mode=2&hit_per_page=100&category_l=RSFST08000&sort=2"
           url = URI.encode path
           result = open(url)
@@ -41,7 +46,7 @@ module Api
             end
           end
         end
-        render :json => Shop.all
+        render :json => ShopStation.where(station_id: 1)
 
       end
     end
