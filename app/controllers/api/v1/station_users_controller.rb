@@ -11,9 +11,7 @@ module Api
         # })
         
         station_user = StationUser.find_by(station_id: params[:station_id], user_id: params[:user_id])
-        binding.pry
         shop_stations = ShopStation.where(station_id: station_user.station_id)
-        binding.pry
         p shop_stations
         shop_stations.each do |shop_station| 
           hoge = ShopUser.create!({
