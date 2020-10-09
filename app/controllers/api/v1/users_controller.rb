@@ -39,7 +39,6 @@ module Api
           shop_user_status.push(shop_user)
         end
         render :json => {
-          shop_count: shops.count, shop_user: shop_user_status.count, 
           shop: shops, shop_user_status: shop_user_status
         }
       end
