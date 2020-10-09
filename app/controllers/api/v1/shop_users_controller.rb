@@ -7,7 +7,9 @@ module Api
       def finish
         shop_user = ShopUser.find_by(shop_id: params[:shop_id], user_id: params[:user_id])
         shop_user.isFinished = !(shop_user.isFinished)
-        render :json => shop_user
+        p shop_user.isFinished
+
+        render :json => {status: 'success'}
       end
     end
   end
