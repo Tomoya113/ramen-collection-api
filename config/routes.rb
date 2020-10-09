@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get "test/edit" => "test#edit"
 
       post "shop_users/finish/:user_id/:shop_id" => "shop_users#finish"
+      get "shop_users/finish/:user_id/:shop_id" => "shop_users#finish"
       post "station_users/register/:user_id/:station_id" => "station_users#register"
       get "station_users/register/:user_id/:station_id" => "station_users#register"
       
