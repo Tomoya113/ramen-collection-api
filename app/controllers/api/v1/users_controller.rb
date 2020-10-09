@@ -34,7 +34,7 @@ module Api
         station = Station.find(params[:station_id])
         station.shop_stations.each do |shop_station|
           shop = shop_station.shop
-          shop_user = ShopUser.where(user_id: params[:user_id], shop_id: shop.shop_id)
+          shop_user = ShopUser.where(user_id: params[:user_id]).where(shop_id: shop.id)
           shops.push(shop)
           shop_user_status.push(shop_user)
         end
