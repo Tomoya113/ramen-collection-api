@@ -12,16 +12,16 @@ module Api
         
         station_user = StationUser.find_by(station_id: params[:station_id], user_id: params[:user_id])
         shop_stations = ShopStation.where(station_id: station_user.station_id)
-        p shop_stations
+        shop_users = []
         shop_stations.each do |shop_station| 
-          hoge = ShopUser.create!({
+          shop_user = ShopUser.create!({
             shop_id: shop_station.shop.id,
             user_id: params[:user_id]
           })
-          p hoge
+          shop_users.push(shop_user)
         end
         
-        render :json => {status: 'success'}
+        render :json => {status: 'success', shop_users: shop_users}
       end
     end
     
