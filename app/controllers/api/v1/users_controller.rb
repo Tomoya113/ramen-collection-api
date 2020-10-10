@@ -44,7 +44,7 @@ module Api
 
         render :json => {
           shop: shops, shop_user_status: shop_user_status,
-          shop_count: shops.count, finished: shop_user_status_count.count
+          # shop_count: shops.count, finished: shop_user_status_count.count
         }
       end
 
