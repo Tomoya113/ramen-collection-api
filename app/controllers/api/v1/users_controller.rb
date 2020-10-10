@@ -38,8 +38,12 @@ module Api
           shops.push(shop)
           shop_user_status.push(shop_user)
         end
+
+        shop_user_status_count = shop_user_status.select { |e| e.isFinished == true }
+
         render :json => {
-          shop: shops, shop_user_status: shop_user_status
+          shop: shops, shop_user_status: shop_user_status,
+          shop_count: shops.count, finished: shop_user_status_count.count
         }
       end
 
