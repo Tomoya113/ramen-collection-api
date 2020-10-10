@@ -5,7 +5,7 @@ module Api
         render :json => StationUser.all
       end
       def register
-        station_user = StationUser.create({
+        station_user = StationUser.create!({
           user_id: params[:user_id],
           station_id: params[:station_id]
         })
